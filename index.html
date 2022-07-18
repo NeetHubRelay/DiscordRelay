@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
+      * {
+        font-family: "Koulen", sans-serif;
+        color: #fff;
+        background-color: #242526;
+        text-align: center;
+      }
+      div {
+        height: 20rem;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      a {
+        color: #5865f2;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1 id="div__h1">Przekierowywanie do zaproszenia</h1>
+      <p>
+        <small
+          >Jesli przekierowanie nie dziala
+          <a href="https://discord.gg/VDWEq7dZAx">Kilknij Tutaj</a></small
+        >
+      </p>
+      <p>N.E.E.T. South Division</p>
+    </div>
+    <script>
+      const h1 = document.querySelector("#div__h1");
+      let flag = 0;
+      function loading() {
+        if (flag == 3) {
+          h1.innerText = "Przekierowywanie do zaproszenia";
+          flag = 0;
+        }
+        h1.innerText += ".";
+        flag++;
+      }
+      function redirect() {
+        window.location.replace("https://discord.gg/VDWEq7dZAx");
+      }
+      setInterval(loading, 500);
+      setTimeout(redirect, 1500);
+    </script>
+  </body>
+</html>
